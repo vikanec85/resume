@@ -1,0 +1,75 @@
+<div>
+    <section>
+        <div>
+            <h1><b>{{name}}</b></h1>
+        </div>
+        <div><b>{{birthdate}}-{{deathdate}}</b></div>
+        <br>
+        <div>
+            <p>birthplace: {{birthplace}}</p>
+            <p>deathplace: {{deathplace}}</p>
+            <p>nationality: {{nationality}}</p>
+            <p>occupation: {{occupation}}</p>
+            <p>known_for: {{known_for}}</p>
+        </div>
+        <br>
+        <hr>
+    </section>
+    <section>
+        <div><ins>Education</ins></div>
+        {{#each education}}
+        <ul>
+            <li>degree: {{degree}}</li>
+            <li>field: {{field}}</li>
+            <li>institution: {{institution}}</li>
+            <li>year: {{year}}</li>
+        </ul>
+        {{/each}}
+        <div><ins>Publications:</ins></div>
+        <ul>
+            {{#each notable_publications}}
+            <li>
+                {{title}}, {{year}}
+                <p>{{publisher}}</p>
+            </li>
+            {{/each}}
+        </ul>
+        <div><ins>Partners</ins></div>
+        <ul>
+            {{#each partners}}
+            <li>
+                {{name}}, {{relationship}}, {{years}}
+            </li>
+            {{/each}}
+        </ul>
+        <br>
+        <hr>
+    </section>
+    <section>
+        <div><ins>AWARD</ins></div>
+        <ul>
+            {{#each awards}}
+            <li>
+                {{title}}, {{year}}
+                <p>{{description}}</p>
+            </li>
+            {{/each}}
+        </ul>
+        <p>Influences: {{influences}}</p>
+        <p>Influenced: {{influenced}}</p>
+        <p>Quotes: {{quotes}}</p>
+        <div><ins>Major discoveries</ins></div>
+        {{#each major_discoveries}}
+        <p>{{title}}, {{year}}</p>
+        <p>{{description}}</p>
+        {{/each}}
+        <div><ins>Contributions</ins></div>
+        <ul>
+            {{#with contributions}}
+            <li>{{title}}</li>
+            <li>{{description}}</li>
+            <li>{{field}}, {{year}}</li>
+            {{/with}}
+        </ul>
+    </section>
+</div>
