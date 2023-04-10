@@ -1,0 +1,69 @@
+<div>
+    <main>
+        <section>
+            <div>
+                <h1>{{name}}</h1>
+            </div>
+            <div>
+                <b>{{description}}</b>
+                <p>{{category}}, {{price}}</p>
+            </div>
+            <hr>
+        </section>
+        <section>
+            {{#with features}}
+            <h2>Processor</h2>
+            {{#with processor}}
+            <ul>
+                <li>{{brand}}</li>
+                <li>{{model}}</li>
+                <li>{{speed}}</li>
+                <li>{{cores}}</li>
+                <li>{{cache}}</li>
+            </ul>
+            {{/with}}
+            <h2>Memory</h2>
+            {{#with memory}}
+            <ul>
+                <li>{{type}}</li>
+                <li>{{size}}</li>
+                <li>{{speed}}</li>
+            </ul>
+            {{/with}}
+            <p><em><b>storage:</b></em>{{storage.type}},{{storage.size}}</p>
+            <h2>Display</h2>
+            {{#with display}}
+            <ul>
+                <li>{{size}}</li>
+                <li>{{resolution}}</li>
+                <li>{{technology}}</li>
+                <li>{{color_space}}</li>
+                <li>{{brightness}}</li>
+                <li>{{refresh_rate}}</li>
+            </ul>
+            {{/with}}
+            <p><em><b>Graphics:</b></em>{{graphics.brand}}, {{graphics.model}}, {{graphics.memory}}</p>
+            <h2>Ports</h2>
+            {{#each ports}}
+            <ul>
+                <li>type:{{type}}</li>
+                <li>count:{{count}}</li>
+                <li>features:{{features}}</li>
+            </ul>
+            {{/each}}
+            <p><em><b>Battery:</b></em>{{battery.type}}, {{battery.capacity}}, {{battery.life}}</p>
+            <button type="button" class="btn">{{weight}}</button>
+            <button type="button" class="btn">{{dimensions.height}}</button>
+            <button type="button" class="btn">{{dimensions.width}}</button>
+            <button type="button" class="btn">{{dimensions.depth}}</button>
+            <h2>{{operating_system}}</h2>
+            {{#each accessories}}
+            <button type="button" class="btn btn-info">
+                <p>{{name}}</p>
+                <p>{{price}}</p>
+            </button>
+            {{/each}}
+            {{/with}}
+        </section>
+    </main>
+</div>
