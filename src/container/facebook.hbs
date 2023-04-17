@@ -1,0 +1,59 @@
+<div>
+    <h1>{{name}}</h1>
+    <main>
+        <section>
+            <hr>
+            <div>
+                <h2>Users</h2>
+                {{#each users}}
+                <ul>
+                    <li>
+                        <p><b><ins><button type="button" class="btn btn-link">{{name}}</button>, {{gender}}, {{age}}
+                                    ({{id}})</ins></b></p>
+                    </li>
+                </ul>
+                <p>
+                <h3>Friends</h3>
+                </p>
+                {{#each friends}}
+                <ul>
+                    <li>
+                        <p><em>{{name}}, {{gender}}, {{age}} ({{id}})</em></p>
+                    </li>
+                </ul>
+                <p>
+                <h4>Mutual friends</h4>
+                </p>
+                {{#each mutual_friends}}
+                <aside>{{name}}, {{gender}}, {{age}} ({{id}})</aside>
+                {{#each mutual_friends}}
+                <aside>mutual_friends: {{name}}, {{gender}}, {{age}} ({{id}})</aside>
+                {{/each}}
+                {{/each}}
+                {{#each groups}}
+                <p>
+                <h3>Groups</h3>
+                </p>
+                <p>{{id}}. <em>{{name}} - {{description}}</em></p>
+                <p>members:</p>
+                {{#each members}}
+                <p>{{id}}. {{name}}, {{gender}}, {{age}}</p>
+                {{/each}}
+                {{/each}}
+                {{/each}}
+
+                {{#each groups}}
+                <p>
+                <h3>Groups</h3>
+                </p>
+                <p>{{id}}. <em>{{name}} - {{description}}</em></p>
+                <p>members:</p>
+                {{#each members}}
+                <p>{{id}}. {{name}}, {{gender}}, {{age}}</p>
+                {{/each}}
+                {{/each}}
+                {{/each}}
+            </div>
+        </section>
+    </main>
+</div>
