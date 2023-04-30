@@ -1,59 +1,90 @@
-<div>
+<main>
     <h1>{{name}}</h1>
-    <main>
+    <div>
         <section>
             <hr>
             <div>
                 <h2>Users</h2>
-                {{#each users}}
-                <ul>
-                    <li>
-                        <p><b><ins><button type="button" class="btn btn-link">{{name}}</button>, {{gender}}, {{age}}
-                                    ({{id}})</ins></b></p>
-                    </li>
-                </ul>
-                <p>
-                <h3>Friends</h3>
-                </p>
-                {{#each friends}}
-                <ul>
-                    <li>
-                        <p><em>{{name}}, {{gender}}, {{age}} ({{id}})</em></p>
-                    </li>
-                </ul>
-                <p>
-                <h4>Mutual friends</h4>
-                </p>
-                {{#each mutual_friends}}
-                <aside>{{name}}, {{gender}}, {{age}} ({{id}})</aside>
-                {{#each mutual_friends}}
-                <aside>mutual_friends: {{name}}, {{gender}}, {{age}} ({{id}})</aside>
-                {{/each}}
-                {{/each}}
-                {{#each groups}}
-                <p>
-                <h3>Groups</h3>
-                </p>
-                <p>{{id}}. <em>{{name}} - {{description}}</em></p>
-                <p>members:</p>
-                {{#each members}}
-                <p>{{id}}. {{name}}, {{gender}}, {{age}}</p>
-                {{/each}}
-                {{/each}}
-                {{/each}}
+                <div class="card">
+                    <div class="card-body">
+                        <ul>
+                            {{#each users}}
+                            <li>
+                                <p><b><ins><button type="button" class="btn btn-link">{{name}}</button>, {{gender}},
+                                            {{age}} years, ({{id}})</ins></b></p>
+                                <p>
+                                <h3>Friends</h3>
+                                </p>
+                                <ul>
+                                    {{#each friends}}
+                                    <li>
+                                        <p><em>{{name}}, {{gender}}, {{age}} years ({{id}})</em></p>
+                                        <p>
+                                        <h4>Mutual friends</h4>
+                                        </p>
+                                        <ul>
+                                            {{#each mutual_friends}}
+                                            <li>
+                                                <aside>{{name}}, {{gender}}, {{age}} ({{id}})</aside>
 
-                {{#each groups}}
-                <p>
-                <h3>Groups</h3>
-                </p>
-                <p>{{id}}. <em>{{name}} - {{description}}</em></p>
-                <p>members:</p>
-                {{#each members}}
-                <p>{{id}}. {{name}}, {{gender}}, {{age}}</p>
-                {{/each}}
-                {{/each}}
-                {{/each}}
+                                                {{#if mutual_friends}}
+                                                <ul>
+                                                    {{#each mutual_friends}}
+                                                    <li>
+                                                        <aside>mutual_friends: {{name}}, {{gender}}, {{age}} ({{id}})
+                                                        </aside>
+                                                    </li>
+                                                    {{/each}}
+                                                </ul>
+                                                {{/if}}
+                                            </li>
+                                            {{/each}}
+                                        </ul>
+                                        <p>
+                                        <h3>Groups</h3>
+                                        </p>
+                                        <ul>
+                                            {{#if groups}}
+                                            {{#each groups}}
+                                            <li>
+                                                <p>{{id}}. <em>{{name}} - {{description}}</em></p>
+                                                <p>members:</p>
+                                                {{#each members}}
+                                                <p>{{id}}. {{name}}, {{gender}}, {{age}}</p>
+                                                {{/each}}
+                                            </li>
+                                            {{/each}}
+                                            {{else}}
+                                            no groups
+                                            {{/if}}
+                                        </ul>
+                                    </li>
+                                    {{/each}}
+                                </ul>
+                                <p>
+                                <h3>Groups</h3>
+                                </p>
+                                {{#if groups}}
+                                <ul>
+                                    {{#each groups}}
+                                    <li>
+                                        <p>{{id}}. <em>{{name}} - {{description}}</em></p>
+                                        <p>members:</p>
+                                        {{#each members}}
+                                        <p>{{id}}. {{name}}, {{gender}}, {{age}}</p>
+                                        {{/each}}
+                                    </li>
+                                    {{/each}}
+                                </ul>
+                                {{else}}
+                                no groups
+                                {{/if}}
+                            </li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
-    </main>
-</div>
+    </div>
+</main>
