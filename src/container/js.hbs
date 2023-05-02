@@ -1,0 +1,55 @@
+<div>
+    <section>
+        <div>
+            <h1><b>{{name}}</b></h1>
+        </div>
+        <div><b>{{description}}</b></div>
+        <br>
+        <div>
+            <p>founder: {{history.founder}}, {{history.year}}</p>
+        </div>
+        <br>
+        <hr>
+    </section>
+    <section>
+        <div><ins>Types</ins></div>
+        <p>{{types}}</p>
+
+        <div><ins>Syntax</ins></div>
+        <p>variables: {{syntax.variables}}</p>
+        <p>functions: {{syntax.functions}}</p>
+        <p>conditionals: {{syntax.conditionals}}</p>
+        <p>loops: {{syntax.loops}}</p>
+        <p>classes: {{syntax.classes}}</p>
+
+        <div><ins>Features:</ins></div>
+        <ul>
+            {{#each features}}
+            <li>
+                {{this}}
+            </li>
+            {{/each}}
+        </ul>
+
+        <div><ins>Libraries:</ins></div>
+
+        {{#each libraries}}
+        <span class="badge rounded-pill text-bg-primary">
+            <p>{{this}}</p>
+        </span>
+        {{/each}}
+
+        <div><ins>Tools:</ins></div>
+        <ul>
+            {{#each tools}}
+            <li>
+                {{this}}
+            </li>
+            {{/each}}
+        </ul>
+        <p><ins>Community</ins></p>
+        {{#each community}}
+        <button type="button" class="btn btn-link">{{name}},{{type}}</button>
+        {{/each}}
+    </section>
+</div>
